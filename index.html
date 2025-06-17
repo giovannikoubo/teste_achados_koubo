@@ -2,27 +2,115 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Achados Tech</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    input { width: 100%; padding: 8px; margin-bottom: 12px; }
-    .item { margin: 6px 0; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .links {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .links a {
+      margin: 0 10px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    .links a img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+    #search {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+    .item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+    .item p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .item a.buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .item a.buy-btn:hover {
+      background: #0056b3;
+    }
   </style>
 </head>
 <body>
-  <h1>Meus Achados</h1>
-  <p><a href="https://t.me/seu_grupo">Grupo no Telegram</a> | <a href="https://wa.me/seu_numero">WhatsApp</a></p>
-  <input id="search" placeholder="🔍 Digite ID ou nome do produto">
-  <div id="list">
-    <div class="item" data-text="001 mini projetor portatil">
-      <strong>#001</strong> Mini Projetor 4K — <a href="https://ali.link/123">Comprar</a>
+  <div class="container">
+    <h1>Meus Achados Tech</h1>
+    <div class="links">
+      <a href="https://t.me/seu_grupo" target="_blank">
+        <img src="https://cdn.simpleicons.org/telegram/0088cc?size=32" alt="Telegram" />
+        Telegram
+      </a>
+      <a href="https://wa.me/seu_numero" target="_blank">
+        <img src="https://cdn.simpleicons.org/whatsapp/25D366?size=32" alt="WhatsApp" />
+        WhatsApp
+      </a>
     </div>
-    <div class="item" data-text="002 suporte celular magnetico">
-      <strong>#002</strong> Suporte Magnético para Celular — <a href="https://ali.link/456">Comprar</a>
+    <input id="search" placeholder="🔍 Digite ID ou nome do produto">
+    <div id="list">
+      <div class="item" data-text="001 mini projetor portatil">
+        <strong>#001</strong>
+        <p>Mini Projetor 4K Portátil</p>
+        <a href="https://ali.link/123" class="buy-btn" target="_blank">Comprar</a>
+      </div>
+      <div class="item" data-text="002 suporte celular magnetico">
+        <strong>#002</strong>
+        <p>Suporte Magnético para Celular</p>
+        <a href="https://ali.link/456" class="buy-btn" target="_blank">Comprar</a>
+      </div>
+      <!-- Repita para cada produto -->
     </div>
-    <!-- repita para cada produto -->
   </div>
-
   <script>
     const input = document.getElementById('search');
     const items = document.querySelectorAll('.item');
