@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Achados Tech</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input { width: 100%; padding: 8px; margin-bottom: 12px; }
+    .item { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <h1>Meus Achados</h1>
+  <p><a href="https://t.me/seu_grupo">Grupo no Telegram</a> | <a href="https://wa.me/seu_numero">WhatsApp</a></p>
+  <input id="search" placeholder="🔍 Digite ID ou nome do produto">
+  <div id="list">
+    <div class="item" data-text="001 mini projetor portatil">
+      <strong>#001</strong> Mini Projetor 4K — <a href="https://ali.link/123">Comprar</a>
+    </div>
+    <div class="item" data-text="002 suporte celular magnetico">
+      <strong>#002</strong> Suporte Magnético para Celular — <a href="https://ali.link/456">Comprar</a>
+    </div>
+    <!-- repita para cada produto -->
+  </div>
+
+  <script>
+    const input = document.getElementById('search');
+    const items = document.querySelectorAll('.item');
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase();
+      items.forEach(el => {
+        el.style.display = el.dataset.text.includes(q) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
